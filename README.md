@@ -50,6 +50,11 @@ To get started with any of these projects, clone the repository and follow the i
    pip install -r requirements.txt
    ```
 
+3. Install the helper functions:
+  ```bash
+  pip install -e .
+  ```
+
 ## Usage
 Each project folder contains a detailed README file with instructions on how to run the project. Refer to the respective README files for specific usage guidelines.
 
@@ -61,5 +66,6 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 
 ## Contact
 For any questions or suggestions, feel free to reach out:
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/cmmannion/)
-- GitHub: [Your GitHub Profile](https://github.com/cmannion-meander)
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/cmmannion/)
+- GitHub: [GitHub Profile](https://github.com/cmannion-meander)
+- Upwork: [Upwork Profile](https://www.upwork.com/freelancers/~015d497bd143e0a9fb)
