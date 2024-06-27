@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Media Personality Profiler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .overview {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Step 1: Resume Parsing</h2>
+        <div>
+            <h3>Resume Upload</h3>
+            <form action="/upload_resume" method="post" enctype="multipart/form-data">
+                <input type="file" name="resume_file">
+                <input type="submit" value="Upload Resume">
+            </form>
+        </div>
+        <div class="overview">
+            <h3>How a Tool Like Humantic AI Works</h3>
+            <p>
+                Let's break down how a tool like Humantic AI analyzes a resume into simple steps:
+            </p>
+            <ol>
+                <li>
+                    <strong>Upload Your Resume:</strong> You start by uploading your resume into the tool.
+                </li>
+                <li>
+                    <strong>Extract Information:</strong> The tool reads your resume and picks out important details like your name, contact info, job titles, and skills.
+                </li>
+                <li>
+                    <strong>Run Searches:</strong> It uses this information to search for your online presence on sites like LinkedIn, Twitter, and Facebook.
+                </li>
+                <li>
+                    <strong>Analyze Content:</strong> The tool reads your social media posts and other online content to understand your personality using DISC and OCEAN frameworks.
+                </li>
+                <li>
+                    <strong>Generate Insights:</strong> It combines this information to give a detailed report about your personality and professional behavior.
+                </li>
+                <li>
+                    <strong>Create a Profile:</strong> Finally, the tool creates a profile that highlights your strengths, skills, and areas where you can improve.
+                </li>
+            </ol>
+            <p>
+                This process helps recruiters understand you better and see if you’re a good fit for their company.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Profile for {{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .search-results {
+            max-height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .bullet-points {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Personality Profile</h2>
+
+        {% if analysis %}
+        <div class="section">
+            <h2>Analysis</h2>
+            <div>
+                {% for line in analysis.split('\n') %}
+                    {% if line.startswith('-') %}
+                        <div class="bullet-points">
+                            <ul>
+                                <li>{{ line }}</li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <p>{{ line }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if narrative %}
+        <div class="section">
+            <h2>Narrative</h2>
+            <div>
+                {% for line in narrative.split('\n') %}
+                    {% if line.startswith('-') %}
+                        <div class="bullet-points">
+                            <ul>
+                                <li>{{ line }}</li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <p>{{ line }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if final_profile %}
+        <div class="section">
+            <h2>Final Profile</h2>
+            <div>
+                {% for line in final_profile.split('\n') %}
+                    {% if line.startswith('-') %}
+                        <div class="bullet-points">
+                            <ul>
+                                <li>{{ line }}</li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <p>{{ line }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

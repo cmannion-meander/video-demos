@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container, .explanation {
+    max-width: 800px; /* Slightly wider to accommodate more content */
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #005a87; /* Unified color theme for headings */
+    font-weight: normal;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Adds spacing after the main title */
+}
+
+textarea, input[type="submit"], input[type="text"] { /* Added input[type="text"] for consistency */
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* So padding does not affect width */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+p, ol, ul { /* Unified line height for paragraphs and lists */
+    line-height: 1.6;
+}
+
+ol, ul { /* Styling for ordered and unordered lists */
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li { /* Improve readability for list items */
+    margin-bottom: 5px;
+}
+
+a { /* Link styling */
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Specific to result display */
+.matched-skills, .pass-fail { /* Shared properties */
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff; /* Text color */
+    text-align: center; /* Center text */
+    display: inline-block; /* Inline block for better control */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.matched-skills {
+    background-color: #e2e2e2;
+    color: #333; /* Override for matched skills text color */
+}
+
+.pass {
+    background-color: #4CAF50;
+}
+
+.fail {
+    background-color: #f44336;
+}
+
+/* Additional styles for explanatory content */
+.explanation h2 {
+    margin-top: 20px;
+}
+
+.explanation p {
+    margin-bottom: 10px; /* Consistent spacing below paragraphs */
+}

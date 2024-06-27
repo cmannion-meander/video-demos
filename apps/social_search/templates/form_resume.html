@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Your Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 100%;
+            max-height: 150px;
+            overflow-y: scroll;
+        }
+        .search-results {
+            max-height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .overview {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Step 2: Find Relevant Social Feeds</h2>
+        <form action="/create_profile" method="post">
+            <label for="resume_text">Parsed Resume:</label><br>
+            <textarea id="resume_text" name="resume_text" rows="10" cols="50">{{ resume_text }}</textarea><br>
+
+            <input type="hidden" name="parsed_resume" value="{{ parsed_resume }}">
+            
+            {% if search_results %}
+            <h2>Search Results</h2>
+            <div class="search-results">
+                <ul>
+                    {% for result in search_results %}
+                    <li>
+                        <a href="{{ result['link'] }}" target="_blank">{{ result['title'] }}</a><br>
+                        <p>{{ result['snippet'] }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            <input type="submit" value="Create Personality Profile">
+        </form>
+        <div class="overview">
+            <h3>What is Happening Here?</h3>
+            <p>
+                In this step, we are taking the information from your resume and using it to search for your online presence. Here's a simple breakdown of the process:
+            </p>
+            <ol>
+                <li>
+                    <strong>Resume Parsing:</strong> We take the resume you uploaded and extract important details like your name, job titles, and skills.
+                </li>
+                <li>
+                    <strong>Online Search:</strong> Using these details, we search for your profiles and activities on social media sites like LinkedIn, Twitter, and Facebook.
+                </li>
+                <li>
+                    <strong>Gather Information:</strong> We gather snippets of information from your social media profiles to understand more about your professional activities and personality.
+                </li>
+            </ol>
+            <p>
+                This process extracts all publicly available information about you and helps to create a personality profile based on that online presence without taking a personality test. In the next section, we'll create that personality profile.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
